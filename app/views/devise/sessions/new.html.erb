@@ -1,19 +1,25 @@
 <div class="registration-page">
-  <h2>Instaclone</h2>
+  <div class="log-in">
+    <h2>Instaclone</h2>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Phone number, username or email"%>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Phone number, username or email"%>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Log in" %>
+      </div>
+      <hr>
+      <p>Log in with Facebook</p>
+      <p>Forgot password?</p>
+      <p>You can also report content you believe is unlawful in your country without logging in.</p>
+      
+      <% end %>
     </div>
-
-    <div class="field">
-      <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
-    </div>
-
-    <div class="actions">
-      <%= f.submit "Log in" %>
-    </div>
-  <% end %>
-
-  <p>Don't have an account?<%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></p>
+    <p>Don't have an account?<%= link_to "Sign up", new_user_registration_path, class: "nav-link" %></p>
 </div>
