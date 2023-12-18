@@ -13,24 +13,70 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .main-navbar {
   display: flex;
 	gap: 16px;
 }
 
- .nav-item {
+.nav-item {
   list-style: none;
- }
+}
 
- .homepage-post {
+.homepage-post {
 	outline: auto;
 	width: 200px;
 	text-align: center;
 	padding: 8px 16px;
- }
+}
 
- .sign-in {
-	border: 1px solid red;
-	width: 210px;
-	height: 200px;
- }
+body .registration-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #3da7f8;
+  font-weight: bold;
+}
+
+/* Signed out users */
+
+.new_user {
+	width: 350px;
+	height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.new_user input {
+  height: 24px;
+  width: 264px;
+}
+
+.actions input {
+  background-color: #3da7f8;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
