@@ -18,6 +18,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -51,6 +52,11 @@ body .registration-page {
   flex-direction: column;
 }
 
+.registration-page h2 {
+  font-family: 'Whisper', cursive;
+  font-size: 4em;
+}
+
 
 .nav-link {
   text-decoration: none;
@@ -69,7 +75,7 @@ body .registration-page {
 }
 
 .log-in {
-  border: 1px solid gray;
+  border: 1px solid rgb(189, 189, 189);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,8 +85,14 @@ body .registration-page {
 }
 
 .new_user input {
-  height: 24px;
+  height: 32px;
   width: 264px;
+  border: 1px solid rgb(189, 189, 189);
+  outline: none;
+}
+
+.new_user input:focus {
+  border: 1px solid rgb(92, 92, 92);
 }
 
 .actions input {
@@ -88,6 +100,7 @@ body .registration-page {
   color: white;
   border: none;
   border-radius: 8px;
+  font-weight: bold;
 }
 
 .log-in hr {
