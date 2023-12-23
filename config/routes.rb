@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'user/show'
   resources :friends
   resources :home
-  devise_for :users
+  devise_for :users, :path_prefix => 'my'
+  resources :users
   resources :posts
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
