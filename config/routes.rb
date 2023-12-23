@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :friends
   resources :home
   devise_for :users
   resources :posts
