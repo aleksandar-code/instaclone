@@ -2,4 +2,7 @@
 
 <%= render @user %>
 
-
+<div>
+  <%= link_to "Add as friend", new_friend_path %>
+  <%= button_to "Destroy this friend", @friend, method: :delete %>
+</div>

@@ -12,13 +12,9 @@
   <% end %>
 
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
+    <%= form.number_field :user_id, id: :friend_user_id, value: current_user.id, type: :hidden %>
   </div>
 
   <div>

@@ -9,7 +9,6 @@ class HomeController < ApplicationController
 
   # GET /homes/1 or /homes/1.json
   def show
-    @home = 1 # My Posts
   end
 
   # GET /homes/new
