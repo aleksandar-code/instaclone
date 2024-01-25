@@ -1,0 +1,6 @@
+<div id="<%= dom_id invitation %>">
+  
+  <p>
+    <%= User.find_by_id(invitation.user_id).email %> sent a friend request
+  </p>
+</div>

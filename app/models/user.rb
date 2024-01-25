@@ -20,6 +20,18 @@ class User < ApplicationRecord
   end
 
   def send_invitation(user)
-    invitations.create(friend_id: user.id)
+    if !invitations.where(friend_id: user.id).exists?
+      invitations.create(friend_id: user.id)
+    end
   end
+
+  def accept_invitation(invitation)
+    invitation.confirmed = true
+  end
+
+  def reject_invitation(invitation)
+    invitation.destroy
+  end
+
+
 end

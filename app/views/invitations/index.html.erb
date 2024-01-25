@@ -1,0 +1,13 @@
+<h1>User#invitations</h1>
+
+<div id="invitations">
+  <% @invitations.each do |invitation| %>
+    <% if invitation.friend_id == current_user.id%>
+      <%= render invitation %>
+      <%= current_user.pending_invitations.inspect %>
+      
+      <%= button_to "Confirm", current_user.accept_invitation(invitation) %>
+      <%= button_to "Reject", current_user.reject_invitation(invitation) %>
+    <% end %>
+  <% end %>
+</div>
