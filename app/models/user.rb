@@ -27,10 +27,12 @@ class User < ApplicationRecord
 
   def accept_invitation(invitation)
     invitation.confirmed = true
+    return nil
   end
 
   def reject_invitation(invitation)
     invitation.destroy
+    return nil
   end
 
 
