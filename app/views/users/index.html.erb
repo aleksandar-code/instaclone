@@ -4,7 +4,7 @@
   <% @users.each do |user| %>
     <%= render user %>
     <p>
-      <%= link_to "Show this user", user %>
+      <%= link_to "Add as friend", send_invitation(user.id, current_user.id), remote: true %>
     </p>
   <% end %>
 </div>

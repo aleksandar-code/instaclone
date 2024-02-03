@@ -5,9 +5,13 @@
     <% if invitation.friend_id == current_user.id%>
       <%= render invitation %>
       <%= current_user.pending_invitations.inspect %>
-      
-      <%= button_to "Confirm", current_user.accept_invitation(invitation) %>
-      <%= button_to "Reject", current_user.reject_invitation(invitation) %>
+       
+      <p>
+        <%= link_to "Accept", accept_invitation(current_user.id, invitation), remote: true %>
+      </p>
+      <p>
+        <%= link_to "Reject", reject_invitation(current_user.id, invitation), remote: true %>
+      </p>
     <% end %>
   <% end %>
 </div>
