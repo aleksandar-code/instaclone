@@ -22,9 +22,7 @@ class User < ApplicationRecord
   def send_invitation(user)
     if !invitations.where(friend_id: user.id).exists?
       invitations.create(friend_id: user.id)
-      return nil
     end
-    return nil
   end
 
   def accept_invitation(invitation)
