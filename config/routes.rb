@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   post 'profile/:id/follow', to: 'profile#follow', as: 'follow'
   post 'profile/:id/unfollow', to: 'profile#unfollow', as: 'unfollow'
   post 'profile/:id/accept', to: 'profile#accept', as: 'accept'
@@ -7,6 +8,7 @@ Rails.application.routes.draw do
 
   get 'profile/:id', to: 'profile#show', as: 'profile'
   root "home#index"
+  resources :likes, only: [:create, :destroy]
   resources :follow_requests
   resources :followers
   resources :home
