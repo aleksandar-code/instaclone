@@ -1,0 +1,4 @@
+<% current_user.followers.each do |user| %>
+    <%= link_to user.email, profile_path(user) %> is following you
+    <%= button_to "Unfollow", unfollow_path(user) %>
+<% end %>

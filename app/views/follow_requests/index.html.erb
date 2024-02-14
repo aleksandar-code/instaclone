@@ -1,0 +1,5 @@
+<% current_user.follow_requests.each do |request| %>
+  <%= request.followerable.email %> wants to follow you
+  <%= button_to "Accept", accept_path(request.followerable) %>
+  <%= button_to "Decline", decline_path(request.followerable) %>
+<% end %>

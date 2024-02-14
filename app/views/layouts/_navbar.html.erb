@@ -5,7 +5,11 @@
     </li>
 
     <li class="nav-item">
-      <%= link_to "Friends", friends_path, class:"nav-link" %> 
+      <%= link_to "Follow requests", follow_requests_path, class:"nav-link" %> 
+    </li>
+
+    <li class="nav-item">
+      <%= link_to "Followers List", followers_path, class:"nav-link" %> 
     </li>
 
     <li class="nav-item">
@@ -17,11 +21,7 @@
     </li>
 
     <li class="nav-item">
-      <%= link_to "Invitations", invitations_path, class:"nav-link" %> 
-    </li>
-
-    <li class="nav-item">
-      <%= link_to "Profile", edit_user_registration_path, class:"nav-link" %> 
+      <%= link_to "Profile", profile_path(current_user), class:"nav-link" %> 
     </li>
   </nav>
   <% end %>

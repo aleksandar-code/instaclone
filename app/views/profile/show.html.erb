@@ -1,0 +1,17 @@
+<h1>
+  <%= @user.email %>
+</h1>
+
+
+<% if current_user != @user %>
+  <% if current_user.following?(@user) %>
+    <%= button_to "Unfollow", unfollow_path(@user) %>
+  <% elsif current_user.sent_follow_request_to?(@user) %>
+    <%= button_to "Cancel follow request", cancel_path(@user) %>
+  <% else %>
+    <%= button_to "Follow", follow_path(@user) %>
+  <% end %>
+
+<% else %>
+  <%= link_to "Edit profile", edit_user_registration_path, class:"nav-link" %> 
+<% end %>

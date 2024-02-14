@@ -41,3 +41,5 @@ gem "letter_opener", "~> 1.8", :group => :development
 gem "devise", "~> 4.9"
 
 gem "faker", "~> 3.2"
+
+gem "followability", "~> 1.1"
