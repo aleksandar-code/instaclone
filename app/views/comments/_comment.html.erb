@@ -1,0 +1,13 @@
+<article>
+  <p ><%= comment.content %></p>
+  <small>by <%= comment.user.email %></small>
+
+  <a href="" class="comment-form-display">reply</a>
+  <div class="comment-form">
+    <%= render partial: 'comments/form', locals: { post: comment.post, parent: comment } %>
+  </div>
+  <% if !comment.parent && !comment.comments.empty? %>
+    <a href="" class="comment-replies-display">| show replies</a>
+  <% end %>
+  <div class="sub-comment"><%= render comment.comments.order(id: :desc) %></div>
+</article>

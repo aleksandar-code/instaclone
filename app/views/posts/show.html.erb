@@ -1,15 +1,49 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @post %>
+Comments
+<%= render @post.comments.where(parent_id: nil).includes(:user).order(id: :desc) %>
 
 <% if user_signed_in? %>
-  <% if current_user.id == @post.user.id %>
+<% if current_user.id == @post.user.id %>
 
-  <%= link_to "Edit this post", edit_post_path(@post) %> 
-  <%= button_to "Destroy this post", @post, method: :delete %>
-  <% end %>
+<%= link_to "Edit this post", edit_post_path(@post) %> 
+<%= button_to "Destroy this post", @post, method: :delete %>
+<% end %>
 <% end %>
 
 <div>
   <%= link_to "Back to posts", posts_path %>
 </div>
+<%= render partial: 'comments/form', locals: { post: @post, parent: nil } %>
+
+<script>
+  document.querySelectorAll('.comment-form-display').forEach((el) => {
+    el.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      
+      if (getComputedStyle(el.nextElementSibling).display == 'none') {
+        el.nextElementSibling.style = 'display: block;';
+      }
+      else {
+        el.nextElementSibling.style = 'display: none;';
+      }
+    })
+  })
+
+  document.querySelectorAll('.comment-replies-display').forEach((el) => {
+    el.nextElementSibling.style = 'display: none;';
+    el.addEventListener('click', (ev) => {
+      ev.preventDefault();
+      
+      if (getComputedStyle(el.nextElementSibling).display == 'none') {
+        el.nextElementSibling.style = 'display: block;';
+        el.textContent = "| hide replies";
+      }
+      else {
+        el.nextElementSibling.style = 'display: none;';
+        el.textContent = "| show replies";
+      }
+    })
+  })
+  </script>

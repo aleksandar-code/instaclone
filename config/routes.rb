@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   get 'profile/:id', to: 'profile#show', as: 'profile'
   root "home#index"
+  resources :posts do
+    resources :comments, only: [:create]
+  end
   resources :likes, only: [:create, :destroy]
   resources :follow_requests
   resources :followers
