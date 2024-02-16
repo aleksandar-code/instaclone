@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :likes, only: [:create, :destroy]
   resources :follow_requests
   resources :followers
+  resources :following
   resources :home
   devise_for :users, :path_prefix => 'my'
   resources :users
