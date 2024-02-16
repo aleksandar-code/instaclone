@@ -114,3 +114,8 @@ body .registration-page {
 .comment-form {
   display: none;
 }
+
+.user-profile {
+  display: flex;
+  gap: 8px;
+}

@@ -2,7 +2,7 @@ class ProfileController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
   def show
-
+    @posts = @user.posts
   end
 
   def follow
@@ -28,6 +28,10 @@ class ProfileController < ApplicationController
   def cancel
     current_user.remove_follow_request_for(@user)
     redirect_to root_path
+  end
+
+  def followers
+    p @user.followers
   end
 
   private

@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   post 'profile/:id/decline', to: 'profile#decline', as: 'decline'
   post 'profile/:id/cancel', to: 'profile#cancel', as: 'cancel'
 
+  get 'profile/:id/followers', to: 'profile#followers', as: 'followers'
+  get 'profile/:id/following', to: 'profile#following', as: 'following'
+
   get 'profile/:id', to: 'profile#show', as: 'profile'
   root "home#index"
   resources :posts do
@@ -13,8 +16,6 @@ Rails.application.routes.draw do
   end
   resources :likes, only: [:create, :destroy]
   resources :follow_requests
-  resources :followers
-  resources :following
   resources :home
   devise_for :users, :path_prefix => 'my'
   resources :users
